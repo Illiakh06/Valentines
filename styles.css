@@ -49,13 +49,15 @@ body {
     display: none;
 }
 
+/* Fixing the "Yay! You made my day!" text to stay on one line */
 #celebration {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     color: #b30000;
     margin-top: 40px;
     display: none;
     width: 100%;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
 }
 
 /* Expanding and shrinking heart animation */
