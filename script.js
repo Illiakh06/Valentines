@@ -43,7 +43,7 @@ function triggerConfetti() {
 
     for (let i = 0; i < 120; i++) {
         let confetti = document.createElement("div");
-        confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟", "❤️", "🔥", "💜", "💙", "💚"][Math.floor(Math.random() * 11)];
+        confetti.innerHTML = ["💖", "💘", "💗", "💞", "💕", "❤️"][Math.floor(Math.random() * 6)];
         confetti.classList.add("confetti");
         confetti.style.left = Math.random() * 100 + "vw";
         confetti.style.animationDuration = (Math.random() * 2 + 1) + "s";
@@ -74,6 +74,7 @@ function triggerFloatingHearts() {
         heart.innerHTML = ["💖", "💘", "💗", "💓", "💞", "💕"][Math.floor(Math.random() * 6)];
         heart.classList.add("floating-heart");
         heart.style.left = Math.random() * 100 + "vw";
+        heart.style.top = Math.random() * 100 + "vh";  // Ensuring random placement
         heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
         document.body.appendChild(heart);
 
