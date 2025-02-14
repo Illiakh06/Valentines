@@ -50,7 +50,7 @@ body {
 }
 
 #celebration {
-    font-size: 60px;
+    font-size: 50px; /* Slightly smaller to fit on one line */
     font-weight: bold;
     color: #b30000;
     margin-top: 40px;
@@ -67,29 +67,12 @@ body {
     animation: fall 3s linear infinite;
 }
 
-.floating-heart {
-    position: fixed;
-    font-size: 50px;
-    opacity: 0;
-    animation: floatUp 6s ease-in-out infinite, fadeInOut 4s ease-in-out infinite;
-}
-
-@keyframes floatUp {
-    from { transform: translateY(100vh); opacity: 1; }
-    to { transform: translateY(-10vh); opacity: 0; }
-}
-
-@keyframes fadeInOut {
-    0%, 100% { opacity: 0; }
-    50% { opacity: 1; }
-}
-
 @keyframes fall {
     from { transform: translateY(0); }
     to { transform: translateY(100vh); }
 }
 
-/* Screen shake effect remains continuous */
+/* Screen shake effect now stops after 4 seconds */
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     25% { transform: translate(-1px, -2px) rotate(-1deg); }
