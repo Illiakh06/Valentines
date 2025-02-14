@@ -19,8 +19,8 @@ function generateLoveNote() {
 function valentineYes() {
     document.getElementById("celebration").style.display = "block";
     triggerChaosEffects();
-    shakeScreen();
-    changeBackground();
+    triggerScreenShake();
+    triggerColorChange();
 }
 
 function valentineNo() {
@@ -33,7 +33,7 @@ function triggerChaosEffects() {
 
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
-        confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟"][Math.floor(Math.random() * 6)];
+        confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟", "❤️", "🔥"][Math.floor(Math.random() * 8)];
         confetti.classList.add("confetti");
         confetti.style.left = Math.random() * 100 + "vw";
         confetti.style.animationDuration = (Math.random() * 2 + 1) + "s";
@@ -43,20 +43,20 @@ function triggerChaosEffects() {
     }
 }
 
-function shakeScreen() {
-    document.getElementById("main-container").classList.add("shake");
+function triggerScreenShake() {
+    let container = document.getElementById("main-container");
+    container.style.animation = "shake 0.5s infinite";
     setTimeout(() => {
-        document.getElementById("main-container").classList.remove("shake");
-    }, 5000);
+        container.style.animation = "";
+    }, 3000);
 }
 
-function changeBackground() {
-    let colors = ["#ffcccc", "#ff99cc", "#ff66b2", "#ff3399", "#ff0066"];
-    let index = 0;
+function triggerColorChange() {
+    let colors = ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000", "#ffcc00", "#ff6600"];
+    let i = 0;
     let interval = setInterval(() => {
-        document.body.style.backgroundColor = colors[index];
-        index = (index + 1) % colors.length;
-    }, 500);
-
-    setTimeout(() => clearInterval(interval), 5000);
+        document.body.style.backgroundColor = colors[i % colors.length];
+        i++;
+        if (i > 20) clearInterval(interval);
+    }, 200);
 }
