@@ -19,6 +19,8 @@ function generateLoveNote() {
 function valentineYes() {
     document.getElementById("celebration").style.display = "block";
     triggerChaosEffects();
+    shakeScreen();
+    changeBackground();
 }
 
 function valentineNo() {
@@ -29,7 +31,7 @@ function triggerChaosEffects() {
     const chaosContainer = document.getElementById("chaos-effects");
     chaosContainer.innerHTML = ""; // Clear previous confetti
 
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
         confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟"][Math.floor(Math.random() * 6)];
         confetti.classList.add("confetti");
@@ -37,6 +39,24 @@ function triggerChaosEffects() {
         confetti.style.animationDuration = (Math.random() * 2 + 1) + "s";
         chaosContainer.appendChild(confetti);
 
-        setTimeout(() => confetti.remove(), 3000);
+        setTimeout(() => confetti.remove(), 5000);
     }
+}
+
+function shakeScreen() {
+    document.getElementById("main-container").classList.add("shake");
+    setTimeout(() => {
+        document.getElementById("main-container").classList.remove("shake");
+    }, 5000);
+}
+
+function changeBackground() {
+    let colors = ["#ffcccc", "#ff99cc", "#ff66b2", "#ff3399", "#ff0066"];
+    let index = 0;
+    let interval = setInterval(() => {
+        document.body.style.backgroundColor = colors[index];
+        index = (index + 1) % colors.length;
+    }, 500);
+
+    setTimeout(() => clearInterval(interval), 5000);
 }
