@@ -14,15 +14,20 @@
             I look at every day with you as a gift. In case you ever foolishly forget: I am never not thinking about you.  
             As Goethe said, <em>“Love does not dominate; it cultivates.”</em>
         </p>
-        <div class="heart-animation"></div>
-        <button onclick="generateLoveNote()">Click for a Random Love Note 💌</button>
+        
+        <div class="heart-container">
+            <div class="heart-animation"></div>
+        </div>
+
+        <button class="love-note-btn" onclick="generateLoveNote()">Click for a Random Love Note 💌</button>
         <p id="love-note"></p>
 
         <h2 class="valentine-question">Will you be my Valentine? 💖</h2>
         <button class="valentine-button yes" onclick="valentineYes()">Yes! 💘</button>
         <button class="valentine-button no" onclick="valentineNo()">No 😢</button>
-        
+
         <div id="celebration" class="hidden">🎉 Yay! You made my day! 🎉</div>
+        <div id="chaos-effects" class="hidden"></div>
     </div>
 
     <script src="script.js"></script>

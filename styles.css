@@ -15,6 +15,12 @@ body {
     max-width: 600px;
     margin: auto;
     border: 3px solid #b30000;
+    position: relative;
+}
+
+.heart-container {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
 
 .heart-animation {
@@ -23,7 +29,6 @@ body {
     background-color: red;
     position: relative;
     display: inline-block;
-    margin-top: 20px;
     transform: rotate(-45deg);
     animation: heartbeat 1s infinite;
 }
@@ -74,6 +79,11 @@ button:hover {
     margin: 10px;
 }
 
+.love-note-btn {
+    display: block;
+    margin: 10px auto;
+}
+
 #celebration {
     font-size: 24px;
     color: #b30000;
@@ -83,4 +93,15 @@ button:hover {
 
 .hidden {
     display: none;
+}
+
+.confetti {
+    position: fixed;
+    font-size: 30px;
+    animation: fall 3s linear infinite;
+}
+
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(100vh); }
 }
