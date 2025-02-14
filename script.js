@@ -55,11 +55,7 @@ function triggerConfetti() {
 
 function triggerScreenShake() {
     let container = document.getElementById("main-container");
-    container.style.animation = "shake 0.5s infinite";
-    
-    setTimeout(() => {
-        container.style.animation = "";
-    }, 4000); // Stops shaking after 4 seconds
+    container.style.animation = "shake 0.5s infinite";  // Continuous shake
 }
 
 function triggerColorChange() {
@@ -70,4 +66,17 @@ function triggerColorChange() {
         i++;
         if (i > 30) clearInterval(interval);
     }, 150);
+}
+
+function triggerFloatingHearts() {
+    for (let i = 0; i < 50; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = ["💖", "💘", "💗", "💓", "💞", "💕"][Math.floor(Math.random() * 6)];
+        heart.classList.add("floating-heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (Math.random() * 5 + 3) + "s";
+        document.body.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 8000);
+    }
 }
