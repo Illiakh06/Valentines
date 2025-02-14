@@ -73,8 +73,8 @@ function triggerFloatingHearts() {
         let heart = document.createElement("div");
         heart.innerHTML = ["💖", "💘", "💗", "💓", "💞", "💕"][Math.floor(Math.random() * 6)];
         heart.classList.add("floating-heart");
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.top = Math.random() * 100 + "vh";  // Ensuring random placement
+        heart.style.left = Math.random() * 100 + "vw";  // Random horizontal position
+        heart.style.top = Math.random() * 80 + "vh";  // Random vertical position
         heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
         document.body.appendChild(heart);
 
