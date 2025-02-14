@@ -50,11 +50,15 @@ body {
 }
 
 #celebration {
-    font-size: 50px;
+    font-size: 60px;
     font-weight: bold;
     color: #b30000;
     margin-top: 40px;
     display: none;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .confetti {
@@ -65,9 +69,9 @@ body {
 
 .floating-heart {
     position: fixed;
-    font-size: 40px;
+    font-size: 50px;
     opacity: 0;
-    animation: floatUp 5s ease-in-out infinite, fadeInOut 3s ease-in-out infinite;
+    animation: floatUp 6s ease-in-out infinite, fadeInOut 4s ease-in-out infinite;
 }
 
 @keyframes floatUp {
