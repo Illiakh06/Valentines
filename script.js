@@ -65,11 +65,17 @@ function triggerColorChange() {
 
 function triggerBouncingHearts() {
     const body = document.getElementById("body");
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
         let heart = document.createElement("div");
         heart.innerHTML = "❤️";
         heart.classList.add("bouncing-heart");
+
+        // Random positions and sizes
         heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 30 + 30 + "px";
+        heart.style.animationDuration = Math.random() * 2 + 1 + "s";
+        heart.style.animationDirection = Math.random() > 0.5 ? "normal" : "reverse";
+
         body.appendChild(heart);
 
         setTimeout(() => heart.remove(), 5000);
