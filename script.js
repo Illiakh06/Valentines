@@ -11,12 +11,29 @@ function generateLoveNote() {
     document.getElementById("love-note").innerText = note;
 }
 
-function sendMessage() {
-    const message = document.getElementById("response").value;
-    if (message.trim() !== "") {
-        alert("Your message has been sent to your Valentine! 💖");
-        document.getElementById("response").value = "";
-    } else {
-        alert("Please write something before sending! 😊");
-    }
+function valentineYes() {
+    document.getElementById("celebration").style.display = "block";
+    confettiEffect();
+}
+
+function valentineNo() {
+    alert("😢 Oh no! But I still think you're amazing!");
+}
+
+function confettiEffect() {
+    const confetti = document.createElement("div");
+    confetti.innerHTML = "💖💝💗💓";
+    confetti.style.position = "fixed";
+    confetti.style.left = "50%";
+    confetti.style.top = "0";
+    confetti.style.fontSize = "50px";
+    confetti.style.animation = "fall 2s linear infinite";
+    document.body.appendChild(confetti);
+    
+    setTimeout(() => confetti.remove(), 3000);
+}
+
+@keyframes fall {
+    from { transform: translateY(0); }
+    to { transform: translateY(100vh); }
 }

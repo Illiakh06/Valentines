@@ -17,10 +17,12 @@
         <div class="heart-animation"></div>
         <button onclick="generateLoveNote()">Click for a Random Love Note 💌</button>
         <p id="love-note"></p>
+
+        <h2 class="valentine-question">Will you be my Valentine? 💖</h2>
+        <button class="valentine-button yes" onclick="valentineYes()">Yes! 💘</button>
+        <button class="valentine-button no" onclick="valentineNo()">No 😢</button>
         
-        <h2>Write a message back to me 💕</h2>
-        <textarea id="response" placeholder="Write your message here..."></textarea>
-        <button onclick="sendMessage()">Send</button>
+        <div id="celebration" class="hidden">🎉 Yay! You made my day! 🎉</div>
     </div>
 
     <script src="script.js"></script>
