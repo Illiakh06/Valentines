@@ -55,23 +55,51 @@ body {
     color: #b30000;
     margin-top: 40px;
     display: none;
-    position: fixed;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    width: 100%;
 }
 
-.confetti {
-    position: fixed;
-    font-size: 30px;
-    animation: fall 3s linear infinite;
+/* Expanding and shrinking heart animation */
+.heart-animation {
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    position: relative;
+    display: inline-block;
+    transform: rotate(-45deg);
+    animation: heartbeat 1s infinite alternate;
 }
 
+.heart-animation::before,
+.heart-animation::after {
+    content: '';
+    width: 70px;
+    height: 70px;
+    background: red;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-animation::before {
+    top: -35px;
+    left: 0;
+}
+
+.heart-animation::after {
+    left: 35px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1) rotate(-45deg); }
+    100% { transform: scale(1.3) rotate(-45deg); }
+}
+
+/* Floating hearts fade in and out */
 .floating-heart {
     position: fixed;
     font-size: 50px;
     opacity: 0;
-    animation: floatUp 6s ease-in-out infinite, fadeInOut 4s ease-in-out infinite;
+    animation: floatUp 5s ease-in-out infinite, fadeInOut 3s ease-in-out infinite;
 }
 
 @keyframes floatUp {
@@ -89,7 +117,7 @@ body {
     to { transform: translateY(100vh); }
 }
 
-/* Screen shake effect remains continuous */
+/* Continuous screen shake effect */
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     25% { transform: translate(-1px, -2px) rotate(-1deg); }
