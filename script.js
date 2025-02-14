@@ -1,3 +1,8 @@
+function openLetter() {
+    document.getElementById("popup").style.display = "none";
+    document.getElementById("main-container").classList.remove("hidden");
+}
+
 const loveNotes = [
     "You are the sunshine that lights up my darkest days. ☀️",
     "Every moment with you feels like a dream. 💫",
@@ -29,7 +34,7 @@ function valentineNo() {
 
 function triggerChaosEffects() {
     const chaosContainer = document.getElementById("chaos-effects");
-    chaosContainer.innerHTML = ""; // Clear previous confetti
+    chaosContainer.innerHTML = "";
 
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
