@@ -1,19 +1,13 @@
-const loveNotes = [
-    "You are the sunshine that lights up my darkest days. ☀️",
-    "Every moment with you feels like a dream. 💫",
-    "Loving you is the easiest and most wonderful thing I've ever done. ❤️",
-    "You are my heart’s favorite melody. 🎶",
-    "With you, every day is Valentine's Day. 💕",
-    "You make even the smallest moments feel magical. ✨",
-    "Every heartbeat of mine whispers your name. 💓",
-    "Life with you is a love story I never want to end. 📖❤️",
-    "You bring joy into my life in the most unexpected ways. 😊💖",
-    "There’s no place I’d rather be than by your side. 💑"
-];
-
-function generateLoveNote() {
-    const note = loveNotes[Math.floor(Math.random() * loveNotes.length)];
-    document.getElementById("love-note").innerText = note;
+function toggleMusic() {
+    var music = document.getElementById("bg-music");
+    var button = document.getElementById("music-toggle");
+    if (music.paused) {
+        music.play();
+        button.innerText = "🔇 Mute Music";
+    } else {
+        music.pause();
+        button.innerText = "🎶 Play Music";
+    }
 }
 
 function valentineYes() {
@@ -29,8 +23,7 @@ function valentineNo() {
 
 function triggerChaosEffects() {
     const chaosContainer = document.getElementById("chaos-effects");
-    chaosContainer.innerHTML = ""; // Clear previous confetti
-
+    chaosContainer.innerHTML = "";
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
         confetti.innerHTML = ["💖", "💝", "💘", "💗", "🎉", "🌟", "❤️", "🔥"][Math.floor(Math.random() * 8)];
@@ -38,25 +31,12 @@ function triggerChaosEffects() {
         confetti.style.left = Math.random() * 100 + "vw";
         confetti.style.animationDuration = (Math.random() * 2 + 1) + "s";
         chaosContainer.appendChild(confetti);
-
         setTimeout(() => confetti.remove(), 5000);
     }
 }
 
-function triggerScreenShake() {
-    let container = document.getElementById("main-container");
-    container.style.animation = "shake 0.5s infinite";
-    setTimeout(() => {
-        container.style.animation = "";
-    }, 3000);
-}
-
-function triggerColorChange() {
-    let colors = ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000", "#ffcc00", "#ff6600"];
-    let i = 0;
-    let interval = setInterval(() => {
-        document.body.style.backgroundColor = colors[i % colors.length];
-        i++;
-        if (i > 20) clearInterval(interval);
-    }, 200);
+function revealSurprise() {
+    let surpriseDiv = document.getElementById("surprise-content");
+    surpriseDiv.innerHTML = '<img src="special-memory.jpg" alt="A special memory" style="width:100%; border-radius:15px;">';
+    surpriseDiv.classList.remove("hidden");
 }

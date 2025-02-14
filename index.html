@@ -7,6 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body id="body">
+    <audio id="bg-music" loop>
+        <source src="romantic-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <button id="music-toggle" onclick="toggleMusic()">🎶 Play Music</button>
+
     <div class="container" id="main-container">
         <h1>Dear Maya 🌟</h1>
         <p class="message">
@@ -28,6 +34,14 @@
 
         <div id="celebration" class="hidden">🎉 Yay! You made my day! 🎉</div>
         <div id="chaos-effects" class="hidden"></div>
+
+        <!-- Hidden Surprise Section -->
+        <div id="hidden-surprise" class="hidden-surprise hidden">
+            <h2>A Surprise for You 💌</h2>
+            <p>Maya, you mean the world to me! Click below for a special memory:</p>
+            <button onclick="revealSurprise()">Reveal ❤️</button>
+            <div id="surprise-content" class="hidden"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>
