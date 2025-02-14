@@ -21,8 +21,6 @@ function valentineYes() {
     triggerChaosEffects();
     triggerScreenShake();
     triggerColorChange();
-    triggerBouncingHearts();
-    playSound();
 }
 
 function valentineNo() {
@@ -31,7 +29,7 @@ function valentineNo() {
 
 function triggerChaosEffects() {
     const chaosContainer = document.getElementById("chaos-effects");
-    chaosContainer.innerHTML = ""; // Clear previous effects
+    chaosContainer.innerHTML = ""; // Clear previous confetti
 
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
@@ -54,35 +52,11 @@ function triggerScreenShake() {
 }
 
 function triggerColorChange() {
-    let colors = ["#ffcccc", "#ffb6c1", "#ff69b4", "#ff1493", "#db7093", "#c71585"];
+    let colors = ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000", "#ffcc00", "#ff6600"];
     let i = 0;
     let interval = setInterval(() => {
         document.body.style.backgroundColor = colors[i % colors.length];
         i++;
         if (i > 20) clearInterval(interval);
     }, 200);
-}
-
-function triggerBouncingHearts() {
-    const body = document.getElementById("body");
-    for (let i = 0; i < 20; i++) {
-        let heart = document.createElement("div");
-        heart.innerHTML = "❤️";
-        heart.classList.add("bouncing-heart");
-
-        // Random positions and sizes
-        heart.style.left = Math.random() * 100 + "vw";
-        heart.style.fontSize = Math.random() * 30 + 30 + "px";
-        heart.style.animationDuration = Math.random() * 2 + 1 + "s";
-        heart.style.animationDirection = Math.random() > 0.5 ? "normal" : "reverse";
-
-        body.appendChild(heart);
-
-        setTimeout(() => heart.remove(), 5000);
-    }
-}
-
-function playSound() {
-    let audio = new Audio("https://www.myinstants.com/media/sounds/tada-fanfare-a.mp3");
-    audio.play();
 }
