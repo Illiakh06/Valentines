@@ -1,7 +1,7 @@
 body {
     font-family: 'Georgia', serif;
     text-align: center;
-    background: linear-gradient(135deg, #fddde6, #fff3f6);
+    background-color: #ffebee;
     color: #b30000;
     padding: 20px;
     margin: 0;
@@ -12,7 +12,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: auto;
     border: 3px solid #b30000;
@@ -75,6 +75,16 @@ button:hover {
     background-color: #800000;
 }
 
+.valentine-button {
+    display: inline-block;
+    margin: 10px;
+}
+
+.love-note-btn, .secret-btn {
+    display: block;
+    margin: 10px auto;
+}
+
 #celebration {
     font-size: 24px;
     color: #b30000;
@@ -97,10 +107,15 @@ button:hover {
     to { transform: translateY(100vh); }
 }
 
-.hidden-surprise {
-    background: #fff0f6;
+.secret-btn {
+    margin-top: 20px;
+    background-color: gold;
+    color: black;
+}
+
+#hidden-message {
+    background-color: pink;
     padding: 20px;
-    margin-top: 30px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border-radius: 10px;
 }
