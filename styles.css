@@ -107,18 +107,18 @@ button:hover {
     to { transform: translateY(100vh); }
 }
 
-/* Fireworks Effect */
-.firework {
+/* Bouncing Hearts Effect */
+.bouncing-heart {
     position: fixed;
-    font-size: 40px;
-    top: 10%;
-    animation: explode 1s ease-in-out infinite;
+    font-size: 50px;
+    bottom: 0;
+    animation: bounce 1s infinite ease-in-out;
 }
 
-@keyframes explode {
-    0% { transform: scale(0.5); opacity: 1; }
-    50% { transform: scale(1.5); opacity: 0.8; }
-    100% { transform: scale(0.5); opacity: 0; }
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-100px); }
+    100% { transform: translateY(0); }
 }
 
 /* Screen shake effect */

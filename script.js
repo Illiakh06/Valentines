@@ -21,7 +21,7 @@ function valentineYes() {
     triggerChaosEffects();
     triggerScreenShake();
     triggerColorChange();
-    triggerFireworks();
+    triggerBouncingHearts();
     playSound();
 }
 
@@ -54,7 +54,7 @@ function triggerScreenShake() {
 }
 
 function triggerColorChange() {
-    let colors = ["#ffcccc", "#ff9999", "#ff6666", "#ff3333", "#ff0000", "#ffcc00", "#ff6600"];
+    let colors = ["#ffcccc", "#ffb6c1", "#ff69b4", "#ff1493", "#db7093", "#c71585"];
     let i = 0;
     let interval = setInterval(() => {
         document.body.style.backgroundColor = colors[i % colors.length];
@@ -63,17 +63,16 @@ function triggerColorChange() {
     }, 200);
 }
 
-function triggerFireworks() {
+function triggerBouncingHearts() {
     const body = document.getElementById("body");
-    for (let i = 0; i < 10; i++) {
-        let firework = document.createElement("div");
-        firework.innerHTML = "🎆";
-        firework.classList.add("firework");
-        firework.style.left = Math.random() * 100 + "vw";
-        firework.style.animationDuration = (Math.random() * 2 + 1) + "s";
-        body.appendChild(firework);
+    for (let i = 0; i < 15; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.classList.add("bouncing-heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        body.appendChild(heart);
 
-        setTimeout(() => firework.remove(), 5000);
+        setTimeout(() => heart.remove(), 5000);
     }
 }
 
